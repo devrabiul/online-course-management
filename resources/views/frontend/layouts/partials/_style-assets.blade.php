@@ -1,0 +1,10 @@
+<link rel="stylesheet" async href="{{ getDynamicAsset('assets/libs/bootstrap-5.3.3/css/bootstrap.min.css') }}">
+<link rel="stylesheet" async href="{{ getDynamicAsset('assets/libs/bootstrap-5.3.3/css/bootstrap.custom.css') }}">
+<link rel="stylesheet" async href="{{ getDynamicAsset('assets/libs/bootstrap-icons-1.11.3/bootstrap-icons.min.css') }}">
+<link rel="stylesheet" async href="{{ getDynamicAsset('assets/libs/fontawesome/css/all.min.css') }}">
+<link rel="stylesheet" async href="{{ getDynamicAsset('assets/libs/swiper/swiper-bundle.min.css') }}">
+<link rel="stylesheet" async href="{{ getDynamicAsset('assets/libs/swiper/swiper-init.css') }}">
+<link rel="stylesheet" async href="{{ getDynamicAsset('assets/libs/lozad/lozad.css') }}">
+<link rel="stylesheet" async href="{{ getDynamicAsset('assets/libs/placeholder/placeholder-loading.min.css') }}">
+<link rel="stylesheet" async href="{{ getDynamicAsset('assets/libs/notyf/notyf.min.css') }}">
+<link rel="stylesheet" async href="{{ getDynamicAsset('assets/css/main.css') }}">

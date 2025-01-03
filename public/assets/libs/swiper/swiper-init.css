@@ -1,0 +1,51 @@
+/*!* Swiper controls *!*/
+/*.swiper-button-prev, .swiper-button-next {*/
+/*    --swiper-navigation-size: 1.2rem;*/
+/*    display: contents;*/
+/*    height: 46px;*/
+/*    width: 46px;*/
+/*    line-height: 46px;*/
+/*    margin: 0 10px;*/
+/*    border-radius: 50%;*/
+/*    border: 0;*/
+/*    -webkit-transition: 0.4s;*/
+/*    transition: 0.4s;*/
+/*    -webkit-box-shadow: none;*/
+/*    box-shadow: none;*/
+/*    color: var(--main-color-one);*/
+/*    border: 1px dashed var(--main-color-one);*/
+/*    padding: 0;*/
+/*    cursor: pointer;*/
+/*    background: transparent;*/
+/*}*/
+
+/*.swiper-button-prev::after, .swiper-button-next::after {*/
+/*    color: var(--bs-primary);*/
+/*    width: 2.5rem;*/
+/*    height: 2.5rem;*/
+/*    border-radius: 100%;*/
+/*    border: 1px dashed var(--bs-primary);*/
+/*    font-size: 1rem;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.swiper-button-prev:hover::after, .swiper-button-next:hover::after {*/
+/*    background-color: var(--bs-primary);*/
+/*    color: #FFF;*/
+/*    border: 1px solid var(--bs-primary);*/
+/*}*/
+
+/*!* Positioning *!*/
+/*.swiper-button-prev {*/
+/*    left: 10px; !* Adjust as needed *!*/
+/*}*/
+
+/*.swiper-button-next {*/
+/*    right: 10px; !* Adjust as needed *!*/
+/*}*/
+
+.swiper-controls {
+    position: relative;
+}
