@@ -108,3 +108,34 @@ tbody {
     --bs-pagination-hover-color: #FFFFFF;
     font-weight: 600;
 }
+
+.header-text .welcome {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #76a120;
+}
+
+.header-text .title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #000a95;
+}
+
+.header-section {
+    min-height: 70vh;
+}
+
+@media (max-width: 768px) {
+    .header-text .title {
+        font-size: 2rem;
+    }
+
+    .header-section {
+        min-height: unset;
+    }
+}
+
+.header-image {
+    max-width: 400px;
+    width: 100%;
+}

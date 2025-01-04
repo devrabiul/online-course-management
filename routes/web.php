@@ -34,7 +34,10 @@ Route::controller(StudentController::class)->group(function() {
 Route::controller(CourseController::class)->group(function() {
     Route::get('course-list', 'index')->name('frontend.course-list');
     Route::post('course-add', 'addStudent')->name('frontend.course-add');
+    Route::get('course-view', 'viewCourse')->name('frontend.course-view');
     Route::get('course-edit', 'edit')->name('frontend.course-edit');
     Route::post('course-update', 'update')->name('frontend.course-update');
     Route::get('course-delete', 'destroy')->name('frontend.course-delete');
+    Route::post('course-assign', 'courseAssign')->name('frontend.course-assign');
+    Route::get('course-assign-delete', 'deleteAssign')->name('frontend.course-assign-delete');
 });

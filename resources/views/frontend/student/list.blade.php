@@ -73,23 +73,23 @@
                     <table class="table table-striped table-hover table-bordered m-0">
                         <thead>
                             <tr>
-                                <th>Serial</th>
+                                <th class="text-center">Serial</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th>Address</th>
-                                <th>Actions</th>
+                                <th class="text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($students as $student)
+                            @forelse ($students as $key => $student)
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
+                                <td class="text-center">{{ $students->firstitem() + $key }}</td>
                                 <td>{{ $student->name }}</td>
                                 <td>{{ $student->email }}</td>
                                 <td>{{ $student->phone }}</td>
                                 <td>{{ $student->address }}</td>
-                                <td>
+                                <td class="text-center">
                                     <a href="{{ route('frontend.student-edit', ['id' => $student->id]) }}" class="btn btn-primary btn-sm">
                                         <i class="fa-regular fa-pen-to-square"></i>
                                     </a>

@@ -9,43 +9,36 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h6 class="m-0">Add/Edit Student</h6>
+                    <h6 class="m-0">Add/Edit Course</h6>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('frontend.student-add') }}" method="POST">
+                    <form action="{{ route('frontend.course-add') }}" method="POST">
                         @csrf
                         <div class="row g-2">
-                            <div class="col-md-4 col-lg-3">
-                                <label for="name" class="form-label">
-                                    Name
+                            <div class="col-md-6 col-lg-6">
+                                <label for="title" class="form-label">
+                                    Title
                                     <span class="required-icon">*</span>
                                 </label>
-                                <input type="text" class="form-control" id="name" name="name"
-                                    placeholder="Enter student's name" required>
+                                <input type="text" class="form-control" id="title" name="title"
+                                    placeholder="Enter course title" required>
                             </div>
 
-                            <div class="col-md-4 col-lg-3">
-                                <label for="email" class="form-label">
-                                    Email
+                            <div class="col-md-6 col-lg-6">
+                                <label for="duration" class="form-label">
+                                    Duration
                                     <span class="required-icon">*</span>
                                 </label>
-                                <input type="email" class="form-control" id="email" name="email"
-                                    placeholder="Enter student's email" required>
+                                <input type="text" class="form-control" id="duration" name="duration"
+                                    placeholder="Enter course duration">
                             </div>
 
-                            <div class="col-md-4 col-lg-3">
-                                <label for="phone" class="form-label">
-                                    Phone
+                            <div class="col-md-12">
+                                <label for="description" class="form-label">
+                                    Description
                                     <span class="required-icon">*</span>
                                 </label>
-                                <input type="text" class="form-control" id="phone" name="phone"
-                                    placeholder="Enter student's phone number" required>
-                            </div>
-
-                            <div class="col-md-4 col-lg-3">
-                                <label for="address" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="address" name="address"
-                                    placeholder="Enter student's address">
+                                <textarea class="form-control" id="description" name="description" rows="4" placeholder="Enter course description" required></textarea>
                             </div>
 
                             <div class="col-md-12">
@@ -67,34 +60,36 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h6 class="m-0">Student List</h6>
+                    <h6 class="m-0">Course List</h6>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped table-hover table-bordered m-0">
                         <thead>
                             <tr>
-                                <th>Serial</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Address</th>
-                                <th>Actions</th>
+                                <th class="text-center">Serial</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Duration</th>
+                                <th class="text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($students as $student)
+                            @forelse ($courses as $key => $course)
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $student->name }}</td>
-                                <td>{{ $student->email }}</td>
-                                <td>{{ $student->phone }}</td>
-                                <td>{{ $student->address }}</td>
-                                <td>
-                                    <a href="{{ route('frontend.student-edit', ['id' => $student->id]) }}" class="btn btn-primary btn-sm">
+                                <td class="text-center">{{ $courses->firstitem() + $key }}</td>
+                                <td>{{ $course->title }}</td>
+                                <td>{{ Str::limit($course->description, 20, '...') }}</td>
+                                <td>{{ $course->duration }}</td>
+                                <td class="text-center">
+                                    <a href="{{ route('frontend.course-view', ['id' => $course->id]) }}" class="btn btn-secondary btn-sm">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </a>
+
+                                    <a href="{{ route('frontend.course-edit', ['id' => $course->id]) }}" class="btn btn-primary btn-sm">
                                         <i class="fa-regular fa-pen-to-square"></i>
                                     </a>
 
-                                    <a href="{{ route('frontend.student-delete', ['id' => $student->id]) }}" class="btn btn-danger btn-sm">
+                                    <a href="{{ route('frontend.course-delete', ['id' => $course->id]) }}" class="btn btn-danger btn-sm">
                                         <i class="fa-regular fa-trash-can"></i>
                                     </a>
                                 </td>
@@ -108,7 +103,7 @@
                     </table>
 
                     <div class="d-flex justify-content-center py-2">
-                        {!! $students->links() !!}
+                        {!! $courses->links() !!}
                     </div>
                 </div>
             </div>
